@@ -1,0 +1,10 @@
+Lita.configure do |config|
+  # The name your robot will use.
+  my_name_is = 'lita'
+  config.robot.name = my_name_is
+
+  config.robot.adapter = :shell
+  config.robot.log_level = :debug
+
+  config.handlers.onewheel_wunderground.api_key = 'get this from https://www.wunderground.com/weather/api/'
+end
