@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
-  spec.name          = 'lita-onewheel-'
+  spec.name          = 'lita-onewheel-wunderground'
   spec.version       = '0.0.0'
   spec.authors       = ['Andrew Kreps']
   spec.email         = ['andrew.kreps@gmail.com']
-  spec.description   = %q{Lita interface to Automatic Pancake.}
-  spec.summary       = %q{See above.}
-  spec.homepage      = 'https://github.com/onewheelskyward/lita-onewheel-'
+  spec.description   = %q{Lita interface to reveal today's record high temperature.}
+  spec.summary       = spec.description
+  spec.homepage      = 'https://github.com/onewheelskyward/lita-onewheel-wundergorund'
   spec.license       = 'MIT'
   spec.metadata      = { 'lita_plugin_type' => 'handler'}
 
