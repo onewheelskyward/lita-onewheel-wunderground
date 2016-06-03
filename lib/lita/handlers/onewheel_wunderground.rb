@@ -8,10 +8,16 @@ module Lita
       route /^recordhigh$/, :record_high, command: true
       route /^recordlow$/, :record_low, command: true
 
+      route /^reocrdhigh$/, :record_high, command: true
+      route /^reocrdlow$/, :record_low, command: true
+
       def record_high(response)
         data = get_data
 
-        response.reply data['almanac']['temp_high']['record']['F'] + "F in " + data['almanac']['temp_high']['recordyear']
+        record_high = data['almanac']['temp_high']['record']['F']
+        record_year = data['almanac']['temp_high']['recordyear']
+        normal_high = data['almanac']['temp_high']['normal']['F']
+        response.reply "Normally #{normal_high}F, record high #{record_high}F in #{record_year}"
       end
 
       def get_data
@@ -24,7 +30,10 @@ module Lita
       def record_low(response)
         data = get_data
 
-        response.reply data['almanac']['temp_low']['record']['F'] + "F in " + data['almanac']['temp_low']['recordyear']
+        record_low = data['almanac']['temp_low']['record']['F']
+        normal_low = data['almanac']['temp_low']['normal']['F']
+        record_year = data['almanac']['temp_low']['recordyear']
+        response.reply "Normally #{normal_low}F, record low #{record_low}F in #{record_year}"
       end
 
       Lita.register_handler(self)
